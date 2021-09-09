@@ -5,3 +5,12 @@ Is a project to simulate the classic game tic tac toe between a human player and
 
 https://user-images.githubusercontent.com/36217766/132266544-ef096fba-eeb9-4803-8588-8e494d236cc3.mp4
 
+## A* PathFinding
+Is a project to simulate the A* pathfinding search algorithm, you can draw the obstacles you need and teh positions to the source point and the destination point in a canvas
+
+
+
+https://user-images.githubusercontent.com/36217766/132630072-353ecf46-c5d0-4efa-aee3-2702374e29d7.mp4
+
+
+
