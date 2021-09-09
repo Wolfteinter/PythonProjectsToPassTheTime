@@ -134,16 +134,16 @@ class AStarSearchAlgorithm:
     
     def _aStarSearch(self):
         if not self._isValid(self.start[0], self.start[1]):
-            print("Source is invalid\n")
+            print("Start is invalid")
             return
         if not self._isValid(self.dest[0], self.dest[1]):
-            print("Destination is invalid\n")
+            print("Destination is invalid")
             return
         if self._isUnBlocked(self.start[0], self.start[1]) == False or self._isUnBlocked(self.dest[0], self.dest[1]) == False:
-            print("Source or the destination is blocked\n")
+            print("Source or the destination is blocked")
             return
         if self._isDestination(self.start[0], self.start[1]):
-            print("We are already at the destination\n")
+            print("We are already at the destination")
             return
         closedList = [[False for x in range(self.gridSize)] for y in range(self.gridSize)] 
         cellDetails = [[Cell(-1, -1, math.inf, math.inf, math.inf) for x in range(self.gridSize)] for y in range(self.gridSize)] 
@@ -174,7 +174,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i - 1, j):
                     cellDetails[i - 1][j].parent_i = i
                     cellDetails[i - 1][j].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return
@@ -193,7 +192,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i + 1, j):
                     cellDetails[i + 1][j].parent_i = i
                     cellDetails[i + 1][j].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails);
                     foundDest = True;
                     return;
@@ -212,7 +210,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i, j + 1):
                     cellDetails[i][j + 1].parent_i = i
                     cellDetails[i][j + 1].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return;
@@ -231,7 +228,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i, j - 1):
                     cellDetails[i][j - 1].parent_i = i
                     cellDetails[i][j - 1].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return;
@@ -250,7 +246,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i - 1, j + 1):
                     cellDetails[i - 1][j + 1].parent_i = i
                     cellDetails[i - 1][j + 1].parent_j = j
-                    print("The destination cell is foundW")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return
@@ -269,7 +264,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i - 1, j - 1):
                     cellDetails[i - 1][j - 1].parent_i = i
                     cellDetails[i - 1][j - 1].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return
@@ -288,7 +282,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i + 1, j + 1):
                     cellDetails[i + 1][j + 1].parent_i = i
                     cellDetails[i + 1][j + 1].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return
@@ -307,7 +300,6 @@ class AStarSearchAlgorithm:
                 if self._isDestination(i + 1, j - 1):
                     cellDetails[i + 1][j - 1].parent_i = i
                     cellDetails[i + 1][j - 1].parent_j = j
-                    print("The destination cell is found")
                     self._tracePath(cellDetails)
                     foundDest = True
                     return
@@ -369,7 +361,5 @@ class AStarSearchAlgorithm:
             else:
                 self.matrix[ym][xm] = 0
                 self.wn.create_rectangle(x1, y1, x2, y2, fill=color, outline=color)
-
-            #self.wn.create_rectangle(x1, y1, x2, y2, fill=color, outline=color)
 
 a = AStarSearchAlgorithm()
